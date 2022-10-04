@@ -1,0 +1,9 @@
+.bundle/
+log/*.log
+pkg/
+/**/spec/dummy/log/*.log
+/**/spec/dummy/tmp/
+/**/spec/dummy/test/
+*.gem
+/**/Gemfile.lock
+tramway-core/coverage/*
