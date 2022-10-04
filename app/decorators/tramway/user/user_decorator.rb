@@ -11,7 +11,7 @@ class Tramway::User::UserDecorator < ::Tramway::Core::ApplicationDecorator
     end
 
     def show_attributes
-      %i[email first_name last_name phone role created_at updated_at]
+      %i[email first_name last_name phone role created_at updated_at credential_text]
     end
 
     if defined? Tramway::Conference
@@ -33,11 +33,15 @@ class Tramway::User::UserDecorator < ::Tramway::Core::ApplicationDecorator
     content_tag(:pre) do
       id = "credential_text_#{object.id}"
       
-      content_tag(:span, id: id) do
-        text = "URL: #{ENV['PROJECT_URL']}"
-        text += "Email: #{object.email}"
+      concat(content_tag(:span, id: id) do
+        text = "URL: #{ENV['PROJECT_URL']}\n"
+        text += "Email: #{object.email}\n"
         text += "Password: "
-      end
+      end)
+
+      concat(content_tag(:br))
+
+      concat copy_to_clipboard id
     end
   end
   
