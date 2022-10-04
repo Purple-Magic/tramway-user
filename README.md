@@ -1,8 +1,5 @@
 # Tramway::User
-Short description and motivation.
-
-## Usage
-How to use my plugin.
+Tramway Engine for user management
 
 ## Installation
 Add this line to your application's Gemfile:
