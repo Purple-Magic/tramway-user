@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::Tramway::User::UserForm < ::Tramway::Core::ApplicationForm
+class Admin::Tramway::User::UserForm < ::Tramway::ApplicationForm
   self.model_class = Tramway::User::User
 
   properties :email, :password, :first_name, :last_name, :role, :phone
