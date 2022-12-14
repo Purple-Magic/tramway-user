@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails/generators'
-require 'tramway/core/generators/install_generator'
+require 'tramway/generators/install_generator'
 
 module Tramway::User::Generators
   class InstallGenerator < ::Tramway::Generators::InstallGenerator
@@ -11,7 +11,7 @@ module Tramway::User::Generators
     desc 'Add the migrations for User'
 
     def run_another_generators
-      generate 'tramway:core:install'
+      generate 'tramway:install'
     end
 
     def self.next_migration_number(path)
